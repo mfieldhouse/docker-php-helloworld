@@ -10,7 +10,7 @@ Debian then uses the [scratch image](https://hub.docker.com/_/scratch/) as its b
 
 At this point, an image has been built which contains Apache, PHP and all of the OS dependencies and libraries required to serve a webpage written in PHP.
 
-Finally, docker copies everything in src/ to the /var/www/html folder which is the Apache web root directory.
+Finally, docker copies everything in src/ inside this repository to the /var/www/html folder inside the image. This is the Apache web root directory.
 
 # Setup
 
