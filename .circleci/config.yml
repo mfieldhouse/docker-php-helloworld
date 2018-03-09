@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/7.0-apache-jessie-node-browsers
+      - image: circleci/php:7.0-apache-jessie-node-browsers
     steps:
       - checkout
 
