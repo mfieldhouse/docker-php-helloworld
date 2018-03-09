@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/build-image
+      - image: circleci/php:7.0-apache
     steps:
       - checkout
       - setup_remote_docker
