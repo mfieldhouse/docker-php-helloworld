@@ -22,3 +22,5 @@ Finally, docker copies everything in src/ inside this repository to the /var/www
 # What You Should See
 
 ![Docker PHP App](https://image.ibb.co/cTxSf7/whale.png "Hello World")
+
+This was originally created to test Amazon Elastic Container Service which is why Moby Dock says Hello ECS!
