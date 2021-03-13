@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches:
+      - dca
+jobs:
+  docker:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: test
+        run: |
+          set -x
+          docker build -t ramky/docker-php-helloworld:test .
+          docker run -d --name phpinfo -p 80:8080 ramky/docker-php-helloworld:test
+          while true
+            do  sleep 10
+                docker logs phpinfo 2>& 1 | grep 'PHP .* Development Server .* started' && break
+            done
+          while true
+            do  sleep 10
+                curl -s localhost | grep "PHP.*phpinfo()" && break
+            done
